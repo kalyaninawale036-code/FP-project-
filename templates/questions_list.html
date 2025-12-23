@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Questions{% endblock %}
+{% block content %}
+<h2>Feedback Questions</h2>
+<a class="btn" href="{{ url_for('questions_add') }}">Add Question</a>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Question</th>
+        <th>Actions</th>
+    </tr>
+    {% for q in questions %}
+    <tr>
+        <td>{{ q.id }}</td>
+        <td>{{ q.text }}</td>
+        <td>
+            <a href="{{ url_for('questions_edit', question_id=q.id) }}">Edit</a> |
+            <a href="{{ url_for('questions_delete', question_id=q.id) }}" onclick="return confirm('Delete this question?');">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

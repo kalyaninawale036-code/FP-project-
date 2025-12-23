@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block title %}Teams{% endblock %}
+{% block content %}
+<header class="hero hero-teams">
+    <div class="hero-inner panel">
+        <div class="hero-copy">
+            <h1>Meet the Team</h1>
+            <p class="lead">A passionate group building FeedbackMgmt — educators and developers committed to making feedback actionable.</p>
+            <p>We design with educators in mind: privacy-first, easy-to-use tools that help improve teaching and learning.</p>
+        </div>
+        
+    </div>
+</header>
+
+<section class="panel teams-section">
+    <h2 class="text-center">Core Contributors</h2>
+    <div class="cards team-cards">
+        <div class="card team-card">
+            <img class="avatar" src="{{ url_for('static', filename='images/team-placeholder.svg') }}" alt="Janvi">
+            <h3>Janvi</h3>
+            <p class="role">Project Lead</p>
+            <p class="bio">Leads product direction and coordinates with stakeholders to prioritize features that help educators.</p>
+        </div>
+
+        <div class="card team-card">
+            <img class="avatar" src="{{ url_for('static', filename='images/team-placeholder.svg') }}" alt="backend">
+            <h3>Backend</h3>
+            <p class="role">Backend Engineer</p>
+            <p class="bio">Builds and maintains the API, database schemas and authentication systems.</p>
+        </div>
+
+        <div class="card team-card">
+            <img class="avatar" src="{{ url_for('static', filename='images/team-placeholder.svg') }}" alt="fronted">
+            <h3>Frontend</h3>
+            <p class="role">Frontend Engineer</p>
+            <p class="bio">Designs interactive UI, ensures accessibility and responsive layouts across devices.</p>
+        </div>
+
+        <div class="card team-card">
+            <img class="avatar" src="{{ url_for('static', filename='images/team-placeholder.svg') }}" alt="Data">
+            <h3>Data</h3>
+            <p class="role">Data Analyst</p>
+            <p class="bio">Helps turn feedback into actionable insights with reports and visualizations.</p>
+        </div>
+        <div class="card team-card">
+            <img class="avatar" src="{{ url_for('static', filename='images/team-placeholder.svg') }}" alt="Data">
+            <h3>Data</h3>
+            <p class="role">Data Analyst</p>
+            <p class="bio">Helps turn feedback into actionable insights with reports and visualizations.</p>
+        </div>
+        <div class="card team-card">
+            <img class="avatar" src="{{ url_for('static', filename='images/team-placeholder.svg') }}" alt="Data">
+            <h3>Data</h3>
+            <p class="role">Data Analyst</p>
+            <p class="bio">Helps turn feedback into actionable insights with reports and visualizations.</p>
+        </div>
+        <div class="card team-card">
+            <img class="avatar" src="{{ url_for('static', filename='images/team-placeholder.svg') }}" alt="Data">
+            <h3>Data</h3>
+            <p class="role">Data Analyst</p>
+            <p class="bio">Helps turn feedback into actionable insights with reports and visualizations.</p>
+        </div>
+    </div>
+</section>
+
+<section class="panel callout">
+    <div class="cards">
+        <div class="card">
+            <h3>Join Us</h3>
+            <p>Interested in contributing? We welcome collaborators—open-source contributions and academic partnerships are encouraged.</p>
+            <a class="btn" href="{{ url_for('signup') }}">Create an account</a>
+        </div>
+        <div class="card">
+            <h3>Contact</h3>
+            <p>For collaboration or support, email <strong>support@example.com</strong>.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="panel callout">
+    <div class="cards">
+        <div class="card">
+            <h3>Join Us</h3>
+            <p>Interested in contributing? We welcome collaborators—open-source contributions and academic partnerships are encouraged.</p>
+            <a class="btn" href="{{ url_for('signup') }}">Create an account</a>
+        </div>
+        <div class="card">
+            <h3>Contact</h3>
+            <p>For collaboration or support, email <strong>support@example.com</strong>.</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

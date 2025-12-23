@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% if session.get('username') %}
+    <section class="dashboard panel">
+        <h2>Dashboard</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Students</h3>
+                <p>{{ counts.get('students', 0) }}</p>
+            </div>
+            <div class="card">
+                <h3>Courses</h3>
+                <p>{{ counts.get('courses', 0) }}</p>
+            </div>
+            <div class="card">
+                <h3>Faculty</h3>
+                <p>{{ counts.get('faculty', 0) }}</p>
+            </div>
+            <div class="card">
+                <h3>Questions</h3>
+                <p>{{ counts.get('questions', 0) }}</p>
+            </div>
+            <div class="card">
+                <h3>Feedback</h3>
+                <p>{{ counts.get('feedback', 0) }}</p>
+            </div>
+        </div>
+    </section>
+
+{% else %}
+
+    <header class="hero hero-landing">
+        <div class="hero-inner">
+            <div class="hero-left">
+                <small class="eyebrow">FeedbackMgmt — built for educators</small>
+                <h1>Make feedback meaningful for every course</h1>
+                <p class="lead">Collect responses, discover trends, and take action with simple tools built for teaching teams.</p>
+                <div class="hero-actions">
+                    <a class="btn primary" href="{{ url_for('signup') }}">Get Started</a>
+                    <a class="btn outline" href="{{ url_for('login') }}">Login</a>
+                </div>
+
+                <ul class="hero-bullets">
+                    <li>Private & role-based access</li>
+                    <li>Visual reports & export</li>
+                    <li>Easy question management</li>
+                </ul>
+            </div>
+
+            <div class="hero-right">
+                <div class="hero-visual">
+                    <img src="{{ url_for('static', filename='images/hero-illustration.svg') }}" alt="Hero illustration">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="showcase">
+        <div class="showcase-inner panel">
+            <div class="showcase-media">
+                <img src="{{ url_for('static', filename='images/panel-1.svg') }}" alt="showcase">
+            </div>
+            <div class="showcase-copy">
+                <h2>A complete feedback and analytics workflow</h2>
+                <p class="lead">From creating questions to reviewing aggregate reports — everything you need to measure and improve learning outcomes.</p>
+                <div class="cards feature-cards">
+                    <div class="card">
+                        <h3>Scalable rosters</h3>
+                        <p>Manage students and courses with import and quick filters.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Custom questions</h3>
+                        <p>Use or create templates and adapt them per course.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Exportable reports</h3>
+                        <p>Download summaries for meetings or accreditation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product panel">
+        <div class="product-inner">
+            <h2 class="text-center">A comprehensive feedback platform</h2>
+            <p class="text-center lead">Flexible enough for small departments and large institutions.</p>
+
+            <div class="cards product-cards">
+                <div class="card">
+                    <img class="icon" src="{{ url_for('static', filename='images/panel-2.svg') }}" alt="panel">
+                    <h3>Organize</h3>
+                    <p>Create and reuse questions, set schedules, and manage cohorts.</p>
+                </div>
+                <div class="card">
+                    <img class="icon" src="{{ url_for('static', filename='images/feature-chart.svg') }}" alt="analytics">
+                    <h3>Analyze</h3>
+                    <p>Visualize trends, filter by groups and export CSV.</p>
+                </div>
+                <div class="card">
+                    <img class="icon" src="{{ url_for('static', filename='images/team-placeholder.svg') }}" alt="team">
+                    <h3>Collaborate</h3>
+                    <p>Share insights with faculty and stakeholders securely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust panel">
+        <div class="trust-inner">
+            <h2 class="text-center">Trusted by educators</h2>
+            <div class="cards trust-logos">
+                <div class="card">30k+ Students</div>
+                <div class="card">400M responses</div>
+                <div class="card">2.1M reports</div>
+                <div class="card">98% uptime</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta panel">
+        <div class="cta-inner">
+            <div>
+                <h2>Ready to improve courses with actionable feedback?</h2>
+                <p class="lead">Create your account and start collecting feedback in minutes.</p>
+            </div>
+            <div>
+                <a class="btn primary" href="{{ url_for('signup') }}">Create account</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="panel footer site-footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h3>FeedbackMgmt</h3>
+                <p>Built to help educators act on feedback and improve outcomes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <p><a href="{{ url_for('about') }}">About</a></p>
+                <p><a href="{{ url_for('teams') }}">Teams</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>support@example.com</p>
+            </div>
+        </div>
+    </footer>
+
+{% endif %}
+
+{% endblock %}

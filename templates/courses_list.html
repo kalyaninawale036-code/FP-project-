@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Courses{% endblock %}
+{% block content %}
+<h2>Courses</h2>
+<a class="btn" href="{{ url_for('courses_add') }}">Add Course</a>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    {% for c in courses %}
+    <tr>
+        <td>{{ c.id }}</td>
+        <td>{{ c.name }}</td>
+        <td>
+            <a href="{{ url_for('courses_edit', course_id=c.id) }}">Edit</a> |
+            <a href="{{ url_for('courses_delete', course_id=c.id) }}" onclick="return confirm('Delete this course?');">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

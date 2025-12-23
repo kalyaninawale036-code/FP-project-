@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Feedback{% endblock %}
+{% block content %}
+<h2>Feedback Responses</h2>
+<a class="btn" href="{{ url_for('feedback_add') }}">Add Feedback</a>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Student</th>
+        <th>Course</th>
+        <th>Question</th>
+        <th>Rating</th>
+        <th>Remark</th>
+        <th>Actions</th>
+    </tr>
+    {% for f in feedback_rows %}
+    <tr>
+        <td>{{ f.id }}</td>
+        <td>{{ f.student_name or '-' }}</td>
+        <td>{{ f.course_name or '-' }}</td>
+        <td>{{ f.question_text or '-' }}</td>
+        <td>{{ f.rating }}</td>
+        <td>{{ f.remark }}</td>
+        <td>
+            <a href="{{ url_for('feedback_delete', feedback_id=f.id) }}" onclick="return confirm('Delete this feedback?');">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

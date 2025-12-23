@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Faculty Form{% endblock %}
+{% block content %}
+<h2>{{ 'Edit' if faculty else 'Add' }} Faculty</h2>
+<form method="post">
+    <label>Name</label>
+    <input type="text" name="name" value="{{ faculty.name if faculty }}" required>
+
+    <label>Department</label>
+    <input type="text" name="department" value="{{ faculty.department if faculty }}">
+
+    <button type="submit">Save</button>
+    <a class="btn" href="{{ url_for('faculty_list') }}">Cancel</a>
+</form>
+{% endblock %}

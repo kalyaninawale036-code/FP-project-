@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Question Form{% endblock %}
+{% block content %}
+<h2>{{ 'Edit' if question else 'Add' }} Question</h2>
+<form method="post">
+    <label>Question Text</label>
+    <input type="text" name="text" value="{{ question.text if question }}" required>
+
+    <button type="submit">Save</button>
+    <a class="btn" href="{{ url_for('questions_list') }}">Cancel</a>
+</form>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Feedback Form{% endblock %}
+{% block content %}
+<h2>Add Feedback</h2>
+<form method="post">
+    <label>Student</label>
+    <select name="student_id" required>
+        <option value="">-- Select Student --</option>
+        {% for s in students %}
+        <option value="{{ s.id }}">{{ s.name }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Course</label>
+    <select name="course_id" required>
+        <option value="">-- Select Course --</option>
+        {% for c in courses %}
+        <option value="{{ c.id }}">{{ c.name }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Question</label>
+    <select name="question_id" required>
+        <option value="">-- Select Question --</option>
+        {% for q in questions %}
+        <option value="{{ q.id }}">{{ q.text }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Rating (1-5)</label>
+    <input type="number" name="rating" min="1" max="5" required>
+
+    <label>Remark</label>
+    <textarea name="remark"></textarea>
+
+    <button type="submit">Save</button>
+    <a class="btn" href="{{ url_for('feedback_list') }}">Cancel</a>
+</form>
+{% endblock %}

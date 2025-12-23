@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Student Form{% endblock %}
+{% block content %}
+<h2>{{ 'Edit' if student else 'Add' }} Student</h2>
+<form method="post">
+    <label>Name</label>
+    <input type="text" name="name" value="{{ student.name if student }}" required>
+
+    <label>Email</label>
+    <input type="email" name="email" value="{{ student.email if student }}">
+
+    <button type="submit">Save</button>
+    <a class="btn" href="{{ url_for('students_list') }}">Cancel</a>
+</form>
+{% endblock %}
